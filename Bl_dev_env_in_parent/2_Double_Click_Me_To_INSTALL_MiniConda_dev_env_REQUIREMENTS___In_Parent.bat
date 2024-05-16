@@ -39,12 +39,12 @@ set "CUDA_HOME=%CUDA_PATH%"
 @rem activate installer env
 call "%CONDA_ROOT_PREFIX%\condabin\conda.bat" activate "%INSTALL_ENV_DIR%" || ( echo. && echo Miniconda hook not found. && goto end )
 
-@REM #cd into the folder where the  BL_DEV_ENV_REQUIREMENTS_installer.py is saved
+@REM #cd into the folder where the  BL_DEV_ENV_REQUIREMENTS_installer_In_Parent.py is saved
 cd /D "%~dp0"
 
 
 @rem setup installer env
-call python BL_DEV_ENV_REQUIREMENTS_installer.py %*
+call python BL_DEV_ENV_REQUIREMENTS_installer_In_Parent.py %*
 @rem enter commands
 cmd /k "%*"
 

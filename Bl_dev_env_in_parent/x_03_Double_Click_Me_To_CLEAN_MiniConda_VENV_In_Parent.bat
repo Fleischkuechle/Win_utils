@@ -15,15 +15,15 @@ set PATH=%PATH%;%SystemRoot%\system32
 echo "%CD%"| findstr /C:" " >nul && echo This script relies on Miniconda which can not be silently installed under a path with spaces. && goto end
 
 @rem fix failed install when installing to a separate drive
-set TMP=%cd%\installer_files
-set TEMP=%cd%\installer_files
+set TMP=%cd%\dev_env
+set TEMP=%cd%\dev_env
 
 @rem deactivate existing conda envs as needed to avoid conflicts
 (call conda deactivate && call conda deactivate && call conda deactivate) 2>nul
 
 @rem config
-set CONDA_ROOT_PREFIX=%cd%\installer_files\conda
-set INSTALL_ENV_DIR=%cd%\installer_files\env
+set CONDA_ROOT_PREFIX=%cd%\dev_env\conda
+set INSTALL_ENV_DIR=%cd%\dev_env\env
 
 @rem environment isolation
 set PYTHONNOUSERSITE=1
