@@ -37,8 +37,11 @@ set "CUDA_HOME=%CUDA_PATH%"
 call "%CONDA_ROOT_PREFIX%\condabin\conda.bat" activate "%INSTALL_ENV_DIR%" || ( echo. && echo Miniconda hook not found. && goto end )
 
 REM Using build in compiler to compile all python files.
-call python -m compileall -b -f .
-@REM call python -m compileall -b -f BackendCoreClassLib\InBlenderRunningLib
+@REM call python -m compileall -b -f .
+REM comileall -l means not recursive that means it only compiles the files
+REM that are inside the . folder it ignores sub folders
+call python -m compileall -b -f -l .
+@REM call python -m compileall -b -f -l BackendCoreClassLib\InBlenderRunningLib
 
 @rem enter commands
 cmd /k "%*"
