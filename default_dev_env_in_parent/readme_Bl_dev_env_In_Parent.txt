@@ -19,3 +19,33 @@ with 2_Double_Click_Me_To_INSTALL_MiniConda_dev_env_REQUIREMENTS___In_Parent.bat
 it will install the requirements listed in 
 REQUIREMENTS.txt
 into that dev env 
+
+
+--------------------------------------------------------------------------
+
+TO get the requirements.txt that only shows the requirements of your project 
+you can use 5_Double_Click_Me_To_Create_PIPREQUES_REQUIREMENTS_TXT_from_PIPREQUES_PATH_TXT_pipreqs.bat
+
+this looks into this file where you put the path to your project in it
+something like: D:\02\05\36\my_project_folder\
+PIPREQUES_PATH.txt 
+
+what is does:
+it creates a text file called: PIPREQUES_REQUIREMENTS.txt
+inside you project path from PIPREQUES_PATH.txt 
+in this example you will find the file here:
+D:\02\05\36\my_project_folder\PIPREQUES_REQUIREMENTS.txt
+
+Here is an example:
+![alt text](image-5.png)
+
+
+A terminal window (we are on windows) will open and show this:
+![alt text](image-6.png)
+
+To understand: This is not a pip freeze result this only shows the dependencies you have in the 
+project.
+
+For comarision here is a pip freeze (created with 4_Double_Click_Me_To_Create_dev_env_PIP_freeze .bat):
+![alt text](image-7.png)
+

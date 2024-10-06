@@ -14,7 +14,7 @@
 REM this is getting the parent path fro where the bat file is.
 set THIS_FILE_FOLDER=%cd%
 cd /D "%~dp0.."
-set BAT_FILE_PARENT_FOLDER=%cd%
+
 set PATH=%PATH%;%SystemRoot%\system32
 
 echo "%CD%"| findstr /C:" " >nul && echo This script relies on Miniconda which can not be silently installed under a path with spaces. && goto end
@@ -48,24 +48,10 @@ cd /D "%~dp0"
 @rem setup installer env
 @rem call python BL_DEV_ENV_REQUIREMENTS_installer_In_Parent.py %*
 @REM call python DEV_ENV_REQUIREMENTS_installer_In_Parent.py %*
-@REM call pip freeze > PIP_FREEZE_REQUIREMENTS.txt
-@REM install the pipreqs package
-call python -m pip install pipreqs
-@REM #echo the PIPREQUES_REQUIREMENTS.txt will be saved here   %BAT_FILE_PARENT_FOLDER% 
-setlocal enabledelayedexpansion
+call pip freeze > PIP_FREEZE_REQUIREMENTS.txt
+@rem enter commands
 
-for /f "delims=" %%a in (%This_FILE_FOLDER%\PIPREQUES_PATH.txt) do (
-  set PACKAGE_FOLDER_PATH=%%a
-  goto :break
-)
-
-:break
-
-echo First line from PIPREQUES_PATH.txt should be a the path to the package folder : !PACKAGE_FOLDER_PATH!
-
-
-call python -m  pipreqs.pipreqs %PACKAGE_FOLDER_PATH% --savepath %package_folder_path%\PIPREQUES_REQUIREMENTS.txt
-
-echo completed process.....
+echo completed process..... you should find a  PIP_FREEZE_REQUIREMENTS.txt file 
+@REM cmd /k "%*"
 :end
 pause
