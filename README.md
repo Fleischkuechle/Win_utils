@@ -12,7 +12,10 @@ terminal and print each folder with size that is bigges as 1MB
 
 
 1_Double_Click_Me_To_INSTALL_MiniConda_VENV_python_version_310 .bat
-
+here you can find diffrent version of miniconda: https://repo.anaconda.com/miniconda/
+in this bat script this one is used:
+set MINICONDA_DOWNLOAD_URL=https://repo.anaconda.com/miniconda/Miniconda3-py310_23.3.1-0-Windows-x86_64.exe
+to install others just replace this link.
 This installs a miniconda in the folder where its placed in and the doubleclick on it
 
 ![alt text](image-2.png)
