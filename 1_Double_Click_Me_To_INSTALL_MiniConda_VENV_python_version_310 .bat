@@ -25,8 +25,14 @@ set TEMP=%cd%\installer_files
 set INSTALL_DIR=%cd%\installer_files
 set CONDA_ROOT_PREFIX=%cd%\installer_files\conda
 set INSTALL_ENV_DIR=%cd%\installer_files\env
-set MINICONDA_DOWNLOAD_URL=https://repo.anaconda.com/miniconda/Miniconda3-py310_23.3.1-0-Windows-x86_64.exe
-set MINICONDA_CHECKSUM=307194e1f12bbeb52b083634e89cc67db4f7980bd542254b43d3309eaf7cb358
+@REM see here for other versions: https://repo.anaconda.com/miniconda/
+@REM set MINICONDA_DOWNLOAD_URL=https://repo.anaconda.com/miniconda/Miniconda3-py310_23.3.1-0-Windows-x86_64.exe
+@REM set MINICONDA_CHECKSUM=307194e1f12bbeb52b083634e89cc67db4f7980bd542254b43d3309eaf7cb358
+@REM chaged to miniconda latest.
+set MINICONDA_DOWNLOAD_URL=https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe
+set MINICONDA_CHECKSUM=ff8ab50f0303c7b9097387967ac2a721016d020069187eff4e172fc14930ebb7
+
+
 set conda_exists=F
 
 @rem figure out whether git and conda needs to be installed
@@ -66,7 +72,7 @@ if "%conda_exists%" == "F" (
 
 @rem create the installer env
 if not exist "%INSTALL_ENV_DIR%" (
-	echo Packages to install: %PACKAGES_TO_INSTALL%
+	@REM echo Packages to install: %PACKAGES_TO_INSTALL%
 	call "%CONDA_ROOT_PREFIX%\_conda.exe" create --no-shortcuts -y -k --prefix "%INSTALL_ENV_DIR%" python=3.10 || ( echo. && echo Conda environment creation failed. && goto end )
 )
 
