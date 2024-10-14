@@ -6,7 +6,8 @@ cd /D "%~dp0"
 set level1="%~dp0.."
 set level2="%level1%\.."
 set release_parent_folder_name="Auto_Release"
-set RELEASE_DIR=%level2%\%release_parent_folder_name%\AA_Pro
+set addon_name=AA_Pro
+set RELEASE_DIR=%level2%\%release_parent_folder_name%\%addon_name%
 
 set input=%level1%
 set output=%RELEASE_DIR%
@@ -16,7 +17,6 @@ echo %output%
 pause
 mkdir "%RELEASE_DIR%"
 set "excluded_files_file=Py_delete_excluded_files.txt"
-set addon_name=AA_Pro
 @REM Create the output folder
 set OUTPUT_DIR=%level2%\%release_parent_folder_name%\output\%addon_name%
 mkdir "%OUTPUT_DIR%"
