@@ -78,8 +78,9 @@ cd /D "%~dp0"
 echo setting  init.py and My_aa_pro_Settings_Processor.py  Is_development bool False  by using 10_search_replace_string.py
 set called_script=%cd%\10_search_replace_string.py
 set file_to_modify=%RELEASE_DIR%\__Init__.py
-set old_string=Is_development:bool=True
-set new_string=Is_development:bool=False
+@REM achtung darauf achten das der text stimmt Is_development:bool = True
+set old_string=Is_development:bool = True
+set new_string=Is_development:bool = False
 call python %called_script%  %file_to_modify%   %old_string%  %new_string%
 set file_to_modify=%RELEASE_DIR%\Settings\My_aa_pro_Settings_Processor.py
 call python %called_script%  %file_to_modify%   %old_string%  %new_string%
