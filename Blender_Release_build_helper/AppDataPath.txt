@@ -1,0 +1,5 @@
+C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\3.5\scripts\addons
+
+C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\4.0\scripts\addons
+
+C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\3.4\scripts\addons
