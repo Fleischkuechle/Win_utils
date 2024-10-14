@@ -5,7 +5,8 @@ cd /D "%~dp0"
 @REM config input and output folder (must be there)
 set level1="%~dp0.."
 set level2="%level1%\.."
-set RELEASE_DIR=%level2%\Auto_Release\AA_Pro
+set release_parent_folder_name="Auto_Release"
+set RELEASE_DIR=%level2%\%release_parent_folder_name%\AA_Pro
 
 set input=%level1%
 set output=%RELEASE_DIR%
@@ -17,7 +18,7 @@ mkdir "%RELEASE_DIR%"
 set "excluded_files_file=Py_delete_excluded_files.txt"
 set addon_name=AA_Pro
 @REM Create the output folder
-set OUTPUT_DIR=%level2%\Auto_Release\output\%addon_name%
+set OUTPUT_DIR=%level2%\%release_parent_folder_name%\output\%addon_name%
 mkdir "%OUTPUT_DIR%"
 echo here you will find the final output  %OUTPUT_DIR%
 pause
