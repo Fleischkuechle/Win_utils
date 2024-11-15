@@ -1,0 +1,37 @@
+Ok this is a helper batch script that streamlines the relaes build of aa pro.
+
+it copys all files to the release folder using x copy.
+it also changes some variables that are specifict for development in the init file so when the release will be used directly in blender 
+the code knows where to find its stuff.
+you can find some links to the appdatapath in AppDataPath.txt
+ussually something like this:
+
+C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\3.4\scripts\addons
+C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\3.5\scripts\addons
+C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\4.0\scripts\addons
+
+first open blender in my case i used Blender 4.0 
+go to edit preferences and remove the addon then go to the 
+C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\4.0\scripts\addons
+(this can lead to error because its just a short cut)
+
+and delete the shortcut in my case:
+"C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\4.0\scripts\addons\Auto-Animation-pro"
+
+then restart blender 4 and check in e preferences if the addon is gone ussullly it tells something like missing script files (because the shortcut folder was deleted.)
+
+!!!!!!!!!!!Important  For Developer only!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+first check if the release is working by testing the release
+open this folder with vs code 
+D:\02\05\05\Auto_Release\output\AA_Pro
+select interpreter (python interpreter from D:\02\05\05\Auto-Animation-pro\dev_env\env)
+start blender !!!!!!!!!Make sure the shortcut is deleted before starting and its not installed in blender C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\4.0\scripts\addons
+
+
+
+
+then restart blender and install the addon like any other 
+in my case i install this:
+"D:\02\05\05\Auto_Release\AA_Pro.zip"
+this can take a while because this aa pro addon comes with mediapipe and its own ui.(470 MB)
+
